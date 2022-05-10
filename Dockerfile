@@ -1,15 +1,15 @@
 FROM ubuntu:20.04
 
 # Install apt-based dependencies
-RUN apt update && apt upgrade -y
-RUN apt install -y \
+RUN apt-get update && apt-get upgrade -y
+RUN apt-get install -y \
     build-essential \
     cpanminus \
     git \
     wget
 
 # Install latest CMake
-RUN apt remove --purge --auto-remove cmake
+RUN apt-get remove --purge --auto-remove cmake
 WORKDIR /setup
 RUN wget -q -O cmake-linux.sh https://github.com/Kitware/CMake/releases/download/v3.23.1/cmake-3.23.1-linux-x86_64.sh
 RUN sh cmake-linux.sh -- --skip-license --prefix=/usr/local

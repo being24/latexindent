@@ -5,7 +5,9 @@ unzip latexindent.zip
 
 FROM perl:slim
 COPY --from=downloader /latexindent /latexindent
-RUN echo 'y' | perl /latexindent/latexindent-module-installer.pl
+RUN echo 'y' | perl /latexindent/latexindent-module-installer.pl &&\
+    cp /latexindent/latexindent.pl /latexindent/latexindent
+
 ENV PATH $PATH:/latexindent
 
 WORKDIR /workdir

@@ -1,4 +1,4 @@
-# Latexindetnt Dockerfile
+# Latexindent Dockerfile
 
 A lightweight dockerfile for the latexindent plugin.
 
@@ -12,10 +12,11 @@ In this dockerfile I have packaged the minimal dependencies to run the script wi
 Note that this means that you won't be able to compile within, just check the format.
 It is particularly useful for CI/CD settings in which a certain style must be reinforced.
 It can easily be embedded in an existing job (e.g. GH Action) as follows:
+
 ```yaml
 jobs:
   check-format:
-    runs-on: ubuntu-20.04 
+    runs-on: ubuntu-20.04
     container: csegarragonz/latexindent:0.0.1
     steps:
       # --- Check out code ---
@@ -27,7 +28,11 @@ jobs:
         run: git diff --exit-code
 ```
 
----------
+---------;
 
-The image is publicly available in [Docker Hub](https://hub.docker.com/repository/docker/csegarragonz/latexindent).
+The image is publicly available in [ghcr.io](https://github.com/being24/latexindent/pkgs/container/latexindent).
 PRs are welcome.
+
+## 参考リンク
+
+<https://wiki.takanotume24.com/vscode/tex/latexindetのDockerイメージを使ったtexファイルのフォーマット.md>

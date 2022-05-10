@@ -28,4 +28,4 @@ jobs:
           context: .
           push: true
           tags: |
-            ghcr.io/${{ github.repository }}:$(cat VERSION)
+            ghcr.io/${{ github.repository }}:latest
